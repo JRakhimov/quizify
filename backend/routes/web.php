@@ -13,4 +13,11 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
+
+
+Route::get('/signup', 'AuthController@getSignup')->name('auth.signup');
+Route::post('/signup', 'AuthController@postSignup');
+
+Route::get('/signin', 'AuthController@getSignin')->name('auth.signin');
+Route::post('/signin', 'AuthController@postSignin');
