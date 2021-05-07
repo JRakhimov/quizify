@@ -12,5 +12,17 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return "welcome";
+});
+
+Route::group(['prefix' => 'teacher'], function() {
+    Route::get('/sign-in', function () {
+        return view('teacher.sign_in');
+    });
+});
+
+Route::group(['prefix' => 'student'], function() {
+    Route::get('/sign-in', function () {
+        return view('student.sign_in');
+    });
 });
