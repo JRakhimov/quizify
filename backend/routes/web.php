@@ -16,6 +16,10 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'teacher'], function() {
+    Route::get('', function () {
+        return view('teacher.index');
+    });
+
     Route::get('/sign-in', function () {
         return view('teacher.sign_in');
     });

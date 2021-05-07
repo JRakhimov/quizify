@@ -10942,9 +10942,51 @@ a.text-dark:focus {
   }
 }
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin-bottom: 0;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+.app-raised-button {
+  background-color: #5d759b;
+  width: 100%;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 0.4rem 0.9rem;
+  border-radius: 7px;
+}
+
+.fab {
+  color: white !important;
+  width: 50px;
+  height: 50px;
+  background-color: #00acb3;
+  border-radius: 50%;
+  box-shadow: 0px 5px 11px -2px rgba(0, 0, 0, 0.18), 0px 4px 12px -7px rgba(0, 0, 0, 0.15);
+  transition: all 0.1s ease-in-out;
+  font-size: 20px;
+  text-align: center;
+  line-height: 50px;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  cursor: pointer;
+}
+
+.fab:active,
+.fab:focus,
+.fab:hover {
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
 }
 
 .app-input {
@@ -10969,14 +11011,48 @@ a.text-dark:focus {
   color: #b5b6b9;
 }
 
-.app-raised-button {
+header {
+  display: flex;
   background-color: #5d759b;
-  width: 100%;
+  flex-wrap: wrap;
+  padding: 0.7rem 1rem;
+}
+
+header .logo-pic,
+header .user-pic {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+}
+
+header .logo-title h2 {
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+header .right-side {
+  margin-left: auto;
+}
+
+header .logo-pic {
+  background-image: url(/images/Logo_180.png?2546151b7084d5f390a5c811ecb75204);
+  background-position: center center;
+  background-size: 100% 100%;
+}
+
+header .user-pic {
+  background-position: center center;
+  background-size: 100% 100%;
+}
+
+header .log-out {
+  background-color: transparent;
+  color: #fff;
   border: none;
   outline: none;
-  color: white;
-  padding: 0.4rem 0.9rem;
-  border-radius: 7px;
+  padding: 5px;
+  font-weight: 600;
 }
 
 .auth-body {
@@ -11027,5 +11103,78 @@ a.text-dark:focus {
   color: white;
   padding: 0.4rem 0.9rem;
   border-radius: 7px;
+}
+
+.teacher-quizzes .page-name h2 {
+  color: #6d6d6d;
+}
+
+.teacher-quizzes .quiz .date {
+  width: 100%;
+}
+
+.teacher-quizzes .quiz .date p {
+  color: #a2a2a2;
+  font-weight: 600;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.teacher-quizzes .quiz .date .line {
+  width: 90%;
+  border-bottom: 1px solid #d2d2d2;
+}
+
+.teacher-quizzes .quiz .body {
+  background-color: #efeff0;
+  border-radius: 7px;
+  position: relative;
+  width: 100%;
+  height: 100px;
+  padding: 10px 35px;
+}
+
+.teacher-quizzes .quiz .body .top .quiz-number {
+  color: #00acb3;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.teacher-quizzes .quiz .body .top .line {
+  height: 25px;
+  border-right: 1px solid #d2d2d2;
+}
+
+.teacher-quizzes .quiz .body .top .quiz-name {
+  color: #a2a2a2;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.teacher-quizzes .quiz .body .bottom {
+  color: #92a6c7;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.teacher-quizzes .quiz .body .blue-decor {
+  top: 0;
+  left: 0;
+  background-color: #92a6c7;
+  border-radius: 7px 0 0 7px;
+  width: 12px;
+  height: 100%;
+  position: absolute;
+}
+
+.teacher-quizzes .quiz .body .section {
+  color: #fff;
+  padding: 4px 10px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #00acb3;
+  border-radius: 7px 0 7px 0;
+  font-weight: 500;
 }
 
