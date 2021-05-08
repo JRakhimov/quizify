@@ -4,6 +4,14 @@
     My quizzes
 @endsection
 
+@section("root-url")
+    /teacher
+@endsection
+
+@section("logout-url")
+    /teacher/sign-in
+@endsection
+
 @section('content')
     @include('partials.teacher_header')
 
