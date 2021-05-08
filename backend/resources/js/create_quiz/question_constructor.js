@@ -29,11 +29,12 @@ const createAnswerVariant = (options) => {
     `);
 
     if (options.canBeDeleted) {
-        $(parent).append(`
-        <button class="app-raised-button red ripple">
-            <i class="fa fa-trash" aria-hidden="true"></i>
-        </button>
-    `);
+        const deleteButton = document.createElement("button");
+        $(deleteButton).addClass(["app-raised-button", "red", "ripple"]);
+        $(deleteButton).append('<i class="fa fa-trash" aria-hidden="true"></i>');
+        $(deleteButton).on('click', () => $(parent).remove());
+
+        $(parent).append(deleteButton);
     }
 
     return parent;
@@ -115,7 +116,7 @@ const createNewQuestion = (index, type) => {
             false,
             "",
             false,
-            true
+            false
         )));
     }
 

@@ -37318,7 +37318,13 @@ var createAnswerVariant = function createAnswerVariant(options) {
   $(parent).append("\n        <input\n            type=\"text\"\n            class=\"answer-input\"\n            placeholder=\"Answer text...\"\n            ".concat(options.inputDisabled ? 'disabled' : '', "\n            value=\"").concat(options.inputValue, "\"\n        >\n    "));
 
   if (options.canBeDeleted) {
-    $(parent).append("\n        <button class=\"app-raised-button red ripple\">\n            <i class=\"fa fa-trash\" aria-hidden=\"true\"></i>\n        </button>\n    ");
+    var deleteButton = document.createElement("button");
+    $(deleteButton).addClass(["app-raised-button", "red", "ripple"]);
+    $(deleteButton).append('<i class="fa fa-trash" aria-hidden="true"></i>');
+    $(deleteButton).on('click', function () {
+      return $(parent).remove();
+    });
+    $(parent).append(deleteButton);
   }
 
   return parent;
@@ -37357,7 +37363,7 @@ var createNewQuestion = function createNewQuestion(index, type) {
 
   if (type === "multiple") {
     $(parent).append(createAddButton(parent, new CreateAnswerOptions(false, true, "", false, true)));
-    $(parent).append(createAnswerVariant(new CreateAnswerOptions(true, false, "", false, true)));
+    $(parent).append(createAnswerVariant(new CreateAnswerOptions(true, false, "", false, false)));
   }
 
   return parent;
