@@ -44,6 +44,37 @@
             </div>
         </div>
 
+        <div class="pt-3" id="questions">
+            <h3 class="sub-title mb-2">Questions</h3>
+
+            <div class="question-constructor mt-3">
+                <div class="mb-3">
+                    <div class="question-title d-flex justify-content-center align-items-center mb-2">
+                        <div class="question-number">1</div>
+
+                        <textarea
+                            name="Question input"
+                            rows="2"
+                            class="question-input"
+                            placeholder="Type a question..."
+                        ></textarea>
+                    </div>
+                </div>
+
+                <div class="question-answer-variant d-flex">
+                    <div class="radio-btn d-flex justify-content-center align-items-center">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                    </div>
+
+                    <input type="text" class="answer-input" placeholder="Answer text...">
+
+                    <button class="app-raised-button red ripple">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
         <div class="pt-3">
             <h3 class="sub-title mb-2">New question info</h3>
 
@@ -53,7 +84,7 @@
 
                     <label class="app-select-label">
                         <select class="app-select-option">
-                            <option value="hide">Choose the question type</option>
+                            <option value="hide" disabled selected>Choose the question type</option>
                         </select>
                     </label>
                 </div>
@@ -76,39 +107,5 @@
                 </div>
             </div>
         </div>
-
-{{--        <div--}}
-{{--            class="row flex-column question-constructor px-5 mt-5"--}}
-{{--            v-for="(question, index) in questions"--}}
-{{--            :key="index"--}}
-{{--        >--}}
-{{--            <div class="col qs-title mb-3">--}}
-{{--                <Question v-model="question.questionText" :questionNumber="index + 1"></Question>--}}
-{{--            </div>--}}
-
-{{--            <div class="col qs-answers">--}}
-{{--                <Answer--}}
-{{--                    :attach="true"--}}
-{{--                    @checked="checkAnswer(index, $event)"--}}
-{{--                    @mounted="mountAnswers(index, $event)"--}}
-{{--                    :type="question.questionType"--}}
-{{--                    class="mb-2"--}}
-{{--                ></Answer>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-
-{{--        <div class="row controllers flex-row-reverse px-5 mt-2">--}}
-{{--            <div class="next-btn order-3">--}}
-{{--                <button @click="addQuestion()">Next Question</button>--}}
-{{--            </div>--}}
-
-{{--            <div class="print-btn order-2">--}}
-{{--                <button>Print</button>--}}
-{{--            </div>--}}
-
-{{--            <div class="done-btn order-1">--}}
-{{--                <button @click="submitQuestions()">Done</button>--}}
-{{--            </div>--}}
-{{--        </div>--}}
     </div>
 @endsection
