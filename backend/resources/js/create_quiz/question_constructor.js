@@ -12,11 +12,25 @@ const createAnswerVariant = (options) => {
     const parent = document.createElement("div");
     $(parent).addClass(["question-answer-variant", "d-flex", options.marginTop ? "mt-2" : ""]);
 
-    $(parent).append(`
-        <div class="radio-btn d-flex justify-content-center align-items-center ${options.selected ? 'checked' : ''}">
-            <i class="fa fa-check" aria-hidden="true"></i>
-        </div>
-    `);
+    const checkDiv = document.createElement("div");
+    $(checkDiv).addClass(["radio-btn", "d-flex", "justify-content-center", "align-items-center"]);
+    if (options.selected) $(checkDiv).addClass("checked");
+    $(checkDiv).append('<i class="fa fa-check" aria-hidden="true"></i>');
+
+    $(checkDiv).on("click", function (_) {
+        $(checkDiv).addClass("checked");
+
+        const initialSiblings = $(checkDiv).parent().siblings();
+        const siblings = $(checkDiv).parent().siblings().filter((i) => {
+            return $(initialSiblings[i]).attr("class").split(/\s+/).includes("question-answer-variant");
+        });
+
+        for (const sibling of siblings) {
+            $(sibling).children()[0].classList.remove("checked");
+        }
+    });
+
+    $(parent).append(checkDiv);
 
     $(parent).append(`
         <input
