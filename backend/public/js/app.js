@@ -37261,7 +37261,7 @@ $(document).ready(function () {
 
     if (selected !== "null") {
       var id = questions.length + 1;
-      var question = new Question(id, selected, questionPoints.val(), createNewQuestion(id));
+      var question = new Question(id, selected, questionPoints.val(), createNewQuestion(id, selected));
       questions.push(question);
       questionsElement.empty();
 
@@ -37299,16 +37299,45 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var createAnswerVariant = function createAnswerVariant() {
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var CreateAnswerOptions = function CreateAnswerOptions(selected, marginTop, inputValue, inputDisabled, canBeDeleted) {
+  _classCallCheck(this, CreateAnswerOptions);
+
+  this.selected = selected;
+  this.marginTop = marginTop;
+  this.inputValue = inputValue;
+  this.inputDisabled = inputDisabled;
+  this.canBeDeleted = canBeDeleted;
+};
+
+var createAnswerVariant = function createAnswerVariant(options) {
   var parent = document.createElement("div");
-  $(parent).addClass(["question-answer-variant", "d-flex"]);
-  $(parent).append("\n        <div class=\"radio-btn d-flex justify-content-center align-items-center\">\n            <i class=\"fa fa-check\" aria-hidden=\"true\"></i>\n        </div>\n    ");
-  $(parent).append("\n        <input type=\"text\" class=\"answer-input\" placeholder=\"Answer text...\">\n    ");
-  $(parent).append("\n        <button class=\"app-raised-button red ripple\">\n            <i class=\"fa fa-trash\" aria-hidden=\"true\"></i>\n        </button>\n    ");
+  $(parent).addClass(["question-answer-variant", "d-flex", options.marginTop ? "mt-2" : ""]);
+  $(parent).append("\n        <div class=\"radio-btn d-flex justify-content-center align-items-center ".concat(options.selected ? 'checked' : '', "\">\n            <i class=\"fa fa-check\" aria-hidden=\"true\"></i>\n        </div>\n    "));
+  $(parent).append("\n        <input\n            type=\"text\"\n            class=\"answer-input\"\n            placeholder=\"Answer text...\"\n            ".concat(options.inputDisabled ? 'disabled' : '', "\n            value=\"").concat(options.inputValue, "\"\n        >\n    "));
+
+  if (options.canBeDeleted) {
+    $(parent).append("\n        <button class=\"app-raised-button red ripple\">\n            <i class=\"fa fa-trash\" aria-hidden=\"true\"></i>\n        </button>\n    ");
+  }
+
   return parent;
 };
 
-var createNewQuestion = function createNewQuestion(index) {
+var createAddButton = function createAddButton(destination, createOption) {
+  var parent = document.createElement("div");
+  $(parent).addClass(["d-flex", "my-2"]);
+  var addAnswerButton = document.createElement("button");
+  $(addAnswerButton).addClass(["app-raised-button", "green", "ripple", "ml-auto"]);
+  $(addAnswerButton).append('<i class="fa fa-plus" aria-hidden="true"></i>');
+  $(addAnswerButton).on("click", function () {
+    return $(destination).append(createAnswerVariant(createOption));
+  });
+  parent.append(addAnswerButton);
+  return parent;
+};
+
+var createNewQuestion = function createNewQuestion(index, type) {
   var parent = document.createElement("div");
   $(parent).addClass(["question-constructor", "mt-3"]);
   var questionTitle = document.createElement("div");
@@ -37316,8 +37345,21 @@ var createNewQuestion = function createNewQuestion(index) {
   $(questionTitle).append("<div class=\"question-number\">".concat(index, "</div>"));
   $(questionTitle).append("\n       <textarea\n        name=\"Question input\"\n        rows=\"2\"\n        class=\"question-input\"\n        placeholder=\"Type a question...\"\n       ></textarea>\n    ");
   $(parent).append(questionTitle);
-  $(parent).append(createAnswerVariant());
-  $(parent).append("\n        <div class=\"d-flex mt-2\">\n            <button class=\"app-raised-button green ripple ml-auto\">\n                <i class=\"fa fa-plus\" aria-hidden=\"true\"></i>\n            </button>\n        </div>\n    ");
+
+  if (type === "text") {
+    $(parent).append(createAnswerVariant(new CreateAnswerOptions(true, false, "", false, false)));
+  }
+
+  if (type === "true/false") {
+    $(parent).append(createAnswerVariant(new CreateAnswerOptions(true, false, "True", true, false)));
+    $(parent).append(createAnswerVariant(new CreateAnswerOptions(false, true, "False", true, false)));
+  }
+
+  if (type === "multiple") {
+    $(parent).append(createAddButton(parent, new CreateAnswerOptions(false, true, "", false, true)));
+    $(parent).append(createAnswerVariant(new CreateAnswerOptions(true, false, "", false, true)));
+  }
+
   return parent;
 };
 

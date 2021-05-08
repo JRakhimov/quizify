@@ -66,6 +66,7 @@
                     <label class="app-select-label">
                         <select class="app-select-option" id="type-selector">
                             <option value="null" disabled selected>Choose the question type</option>
+                            <option value="multiple">Multiple choice</option>
                             <option value="true/false">True/False</option>
                             <option value="text">Plain text</option>
                         </select>

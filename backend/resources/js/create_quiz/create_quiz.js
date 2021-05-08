@@ -21,7 +21,7 @@ $(document).ready(function () {
 
         if (selected !== "null") {
             const id = questions.length + 1;
-            const question = new Question(id, selected, questionPoints.val(), createNewQuestion(id));
+            const question = new Question(id, selected, questionPoints.val(), createNewQuestion(id, selected));
             questions.push(question);
 
             questionsElement.empty();
