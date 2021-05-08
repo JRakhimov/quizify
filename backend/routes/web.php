@@ -23,6 +23,10 @@ Route::group(['prefix' => 'teacher'], function() {
     Route::get('/sign-in', function () {
         return view('teacher.sign_in');
     });
+
+    Route::get('/quiz/create', function () {
+        return view('teacher.quiz_create');
+    });
 });
 
 Route::group(['prefix' => 'student'], function() {

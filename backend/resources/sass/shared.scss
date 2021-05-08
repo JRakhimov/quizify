@@ -1,17 +1,3 @@
-.app-input {
-    padding: 0.4rem 0.9rem;
-    width: 100%;
-    color: $placeholderColor;
-    background-color: $grey;
-    border-radius: $borderRadius;
-    border: none;
-    outline: none;
-
-    ::placeholder {
-        color: $placeholderColor;
-    }
-}
-
 header {
     display: flex;
     background-color: $blue;

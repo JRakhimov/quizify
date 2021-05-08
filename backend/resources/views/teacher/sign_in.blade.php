@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="mt-3">
-                    <button class="app-raised-button">Login</button>
+                    <button class="app-raised-button w-100 ripple">Login</button>
                 </div>
         </div>
     </div>

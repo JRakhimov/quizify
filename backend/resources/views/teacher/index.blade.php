@@ -42,5 +42,5 @@
         </div>
     </div>
 
-    <a href="/teacher/quiz/create" class="fab">+</a>
+    <a href="/teacher/quiz/create" class="fab ripple">+</a>
 @endsection

@@ -2,12 +2,16 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Variables
-@import 'variables';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+@import "~font-awesome/scss/font-awesome.scss";
+@import "~css-ripple-effect/dist/ripple.min.css";
+
+@import 'variables';
 
 @import 'base';
+@import "inputs";
 @import 'buttons';
 @import 'shared';
 
@@ -139,5 +143,18 @@
                 font-weight: 500;
             }
         }
+    }
+}
+
+.create-quiz {
+    .sub-title {
+        font-size: 1.2rem;
+        color: $greyDarker;
+    }
+
+    .input-title {
+        font-size: 1rem;
+        color: $black;
+        font-weight: 500;
     }
 }
