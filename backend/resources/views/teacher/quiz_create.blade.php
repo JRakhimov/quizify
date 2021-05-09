@@ -86,7 +86,7 @@
 
                     <div class="row ml-1">
                         <button class="app-raised-button ripple mr-2" id="add-question">Add question</button>
-                        <button class="app-raised-button ripple green">Done</button>
+                        <button class="app-raised-button ripple green" id="create-quiz">Done</button>
                     </div>
                 </div>
             </div>

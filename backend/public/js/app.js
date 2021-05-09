@@ -37252,11 +37252,12 @@ var Question = function Question(id, type, points, element) {
 
 var questionsElement = $("#questions");
 var addQuestionButton = $("#add-question");
+var createQuizButton = $("#create-quiz");
 var typeSelector = $("#type-selector");
 var questionPoints = $("#question-points");
 var questions = [];
 $(document).ready(function () {
-  addQuestionButton.on("click", function (event) {
+  addQuestionButton.on("click", function (_) {
     var selected = typeSelector.children("option:selected").val();
 
     if (selected !== "null") {
@@ -37283,6 +37284,9 @@ $(document).ready(function () {
       questionPoints.val("");
       questionsElement.show();
     }
+  });
+  createQuizButton.on("click", function (_) {
+    console.log(questions);
   });
 
   if (questionsElement.children().length === 1) {

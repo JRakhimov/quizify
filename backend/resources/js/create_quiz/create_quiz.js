@@ -11,12 +11,13 @@ class Question {
 
 const questionsElement = $("#questions");
 const addQuestionButton = $("#add-question");
+const createQuizButton = $("#create-quiz");
 const typeSelector = $("#type-selector");
 const questionPoints = $("#question-points");
 const questions = [];
 
 $(document).ready(function () {
-    addQuestionButton.on("click", function (event) {
+    addQuestionButton.on("click", function (_) {
         const selected = typeSelector.children("option:selected").val();
 
         if (selected !== "null") {
@@ -35,6 +36,10 @@ $(document).ready(function () {
             questionsElement.show();
         }
     })
+
+    createQuizButton.on("click", function (_) {
+        console.log(questions);
+    });
 
     if (questionsElement.children().length === 1) {
         questionsElement.hide();
