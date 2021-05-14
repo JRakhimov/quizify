@@ -34,3 +34,9 @@ Route::group(['prefix' => 'student'], function() {
         return view('student.sign_in');
     });
 });
+
+Route::get('/signUp', 'AuthController@getSignup')->name('auth.signUp');
+Route::post('/signUp', 'AuthController@postSignup');
+
+Route::get('/signIn', 'AuthController@getSignin')->name('auth.signIn');
+Route::post('/signIn', 'AuthController@postSignin');
