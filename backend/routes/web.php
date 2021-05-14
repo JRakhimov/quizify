@@ -15,9 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+Route::get('/signUp', 'AuthController@getSignup')->name('auth.signUp');
+Route::post('/signUp', 'AuthController@postSignup');
 
-Route::get('/signup', 'AuthController@getSignup')->name('auth.signup');
-Route::post('/signup', 'AuthController@postSignup');
-
-Route::get('/signin', 'AuthController@getSignin')->name('auth.signin');
-Route::post('/signin', 'AuthController@postSignin');
+Route::get('/signIn', 'AuthController@getSignin')->name('auth.signIn');
+Route::post('/signIn', 'AuthController@postSignin');

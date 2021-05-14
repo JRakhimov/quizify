@@ -41,11 +41,22 @@ return [
             'provider' => 'users',
         ],
 
+        'student_web' => [
+            'driver' => 'session',
+            'provider' => 'students',
+        ],
+
+        'teacher_web' => [
+            'driver' => 'session',
+            'provider' => 'teachers',
+        ],
+
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
             'hash' => false,
         ],
+
     ],
 
     /*
@@ -71,11 +82,23 @@ return [
             'model' => App\Student::class,
         ],*/
 
-         'users' => [
-             'driver' => 'database',
-             'table' => 'students',
-             'model' => App\Student::class,
-         ],
+        'users' => [
+            'driver' => 'database',
+            'table' => 'students',
+            'model' => App\Student::class,
+        ],
+
+        'teachers' => [
+            'driver' => 'database',
+            'table' => 'teachers',
+            'model' => App\Teacher::class,
+        ],
+
+        'students' => [
+            'driver' => 'database',
+            'table' => 'students',
+            'model' => App\Student::class,
+        ],
     ],
 
     /*

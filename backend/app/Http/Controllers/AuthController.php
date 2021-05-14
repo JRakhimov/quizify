@@ -8,13 +8,15 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-    public function getSignup(){
+    public function getSignup()
+    {
         return view('auth.signup');
     }
 
-    public function postSignup(Request $request){
+    public function postSignup(Request $request)
+    {
 
-        $this->validate($request,[
+        $this->validate($request, [
             'first_name' => 'required',
             'last_name' => 'required',
             'email' => 'required|unique:students|email|max:255',
@@ -28,26 +30,28 @@ class AuthController extends Controller
             'password' => bcrypt($request->input('password')),
         ]);
 
-        return  redirect()->route('home')->with('info', 'You are registered successfully!');
+        return redirect()->route('home')->with('info', 'You are registered successfully!');
     }
 
-    public function getSignin(){
+    public function getSignin()
+    {
         return view('auth.signin');
     }
 
-    public function postSignin(Request $request){
+    public function postSignin(Request $request)
+    {
 
-        $this->validate($request,[
+        $this->validate($request, [
             'email' => 'required|max:255',
             'password' => 'required|min:6',
         ]);
 
-        // $credentials = $request->only('email', 'password');
-        if(Auth::attempt($request->only('email','password'))){
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::guard('student_web')->attempt($credentials)) {
             dd('OK');
         }
 
-        return  redirect()->route('home');
-
+        return redirect()->route('home');
     }
 }
