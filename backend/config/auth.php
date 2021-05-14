@@ -66,15 +66,16 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        /*'users' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
-        ],
+            'model' => App\Student::class,
+        ],*/
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+         'users' => [
+             'driver' => 'database',
+             'table' => 'students',
+             'model' => App\Student::class,
+         ],
     ],
 
     /*
@@ -95,7 +96,7 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
-            'table' => 'password_resets',
+            'table' => 'students',
             'expire' => 60,
         ],
     ],

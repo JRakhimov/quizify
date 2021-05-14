@@ -12,7 +12,7 @@
     <form method="POST" action="{{ route('auth.signin') }}">
         @csrf
         <label for="email">Email address</label>
-        <input type="emil" name="email" id="email">
+        <input type="email" name="email" id="email">
         @if ($errors->has('email'))
             email йокмайапти
         @endif
@@ -22,12 +22,12 @@
         @if ($errors->has('password'))
             password йокмайапти
         @endif
-    
+
         <button type="submit">Submit</button>
-    
+
     </form>
 
-    
+
 </body>
 </html>
 
