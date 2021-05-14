@@ -12,7 +12,10 @@
     <link rel="stylesheet" href="{{ URL::to('css/styles.css') }}">
 </head>
 <body>
-    @yield('content')
-    <script src="{{ URL::to('js/app.js') }}"></script>
+    <div class="auth-body">
+        <div class="background">
+            @yield('content')
+        </div>
+    </div>
 </body>
 </html>
