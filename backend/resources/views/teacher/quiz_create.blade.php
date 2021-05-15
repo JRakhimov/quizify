@@ -32,6 +32,7 @@
                     <label class="app-select-label">
                         <select class="app-select-option">
                             <option value="hide">Choose the subject</option>
+                            <option value="Math">Math</option>
                         </select>
                     </label>
                 </div>
