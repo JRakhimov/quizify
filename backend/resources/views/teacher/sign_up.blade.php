@@ -1,7 +1,7 @@
 @extends('layouts.sign_in')
 
 @section('page-title')
-    Student login
+    Teacher sign up
 @endsection
 
 @section('content')
@@ -15,12 +15,12 @@
                 </div>
 
                 <div class="sub-title mt-3">
-                    <h3>Login to continue</h3>
+                    <h3>Sign up to continue</h3>
                 </div>
 
-{{--                <div class="sub-title" :class="{ errorSubtitle: isError }">--}}
-{{--                    <h3>{{ subTitle }}</h3>--}}
-{{--                </div>--}}
+                {{--                <div class="sub-title" :class="{ errorSubtitle: isError }">--}}
+                {{--                    <h3>{{ subTitle }}</h3>--}}
+                {{--                </div>--}}
 
                 <div class="mt-3">
                     <input class="app-input" type="text" placeholder="Email" required>
@@ -30,9 +30,15 @@
                     <input class="app-input" type="password" placeholder="Password" required>
                 </div>
 
+                <label class="app-select-label mt-3">
+                    <select class="app-select-option">
+                        <option value="null" selected disabled>Choose the subject</option>
+                    </select>
+                </label>
+
                 <div class="mt-3">
-                    <button class="app-raised-button w-100 ripple">Login</button>
+                    <button class="app-raised-button w-100 ripple">Sign up</button>
                 </div>
+            </div>
         </div>
-    </div>
 @endsection
