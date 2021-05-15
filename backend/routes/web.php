@@ -15,24 +15,30 @@ Route::get('/', function () {
     return "welcome";
 });
 
-Route::group(['prefix' => 'teacher'], function() {
+Route::group(['prefix' => 'teacher'], function () {
     Route::get('', function () {
         return view('teacher.index');
     });
 
-    Route::get('/sign-in', function () {
-        return view('teacher.sign_in');
-    });
+    Route::get('/sign-in', 'AuthController@getSignInTeacher')->name('signInTeacher');
+    Route::post('/sign-in', 'AuthController@postSignInTeacher');
+
+    Route::get('/sign-up', 'AuthController@getSignUpTeacher')->name('signUpTeacher');
+    Route::post('/sign-up', 'AuthController@postSignUpTeacher');
 
     Route::get('/quiz/create', function () {
         return view('teacher.quiz_create');
     });
 });
 
-Route::group(['prefix' => 'student'], function() {
-    Route::get('/sign-in', function () {
-        return view('student.sign_in');
-    });
+Route::group(['prefix' => 'student'], function () {
+
+    Route::get('/sign-in', 'AuthController@getSignInStudent')->name('signInStudent');
+    Route::post('/sign-in', 'AuthController@postSignInStudent');
+
+    Route::get('/sign-up', 'AuthController@getSignUpStudent')->name('signUpStudent');
+    Route::post('/sign-up', 'AuthController@postSignUpStudent');
+
 });
 
 Route::get('/signUp', 'AuthController@getSignup')->name('auth.signUp');
