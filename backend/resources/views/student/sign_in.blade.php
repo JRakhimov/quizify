@@ -1,7 +1,7 @@
 @extends('layouts.sign_in')
 
 @section('page-title')
-    Teacher login
+    Student login
 @endsection
 
 @section('content')
