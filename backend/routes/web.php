@@ -33,6 +33,10 @@ Route::group(['prefix' => 'teacher'], function () {
     Route::get('/quiz/create', function () {
         return view('teacher.quiz_create');
     });
+
+    Route::get('/quiz/1', function () {
+        return view('teacher.quiz');
+    });
 });
 
 Route::group(['prefix' => 'student'], function () {

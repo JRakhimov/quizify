@@ -15,148 +15,8 @@
 @import 'buttons';
 @import 'shared';
 
-.auth-body {
-    background: #E5E5E5;
-
-    .background {
-        background-image: url("../images/auth_bg.png");
-        background-position: center 56vh;
-        background-repeat: no-repeat;
-        height: 100vh;
-    }
-
-    .logo {
-        width: 4.5rem;
-        height: 4.5rem;
-        border-radius: 50%;
-        background-image: url("../images/logo_180.png");
-        background-position: center center;
-        background-size: 100% 100%;
-        margin: 0 auto;
-    }
-
-    .logo-title h2 {
-        color: $black;
-        font-size: 2rem;
-        font-weight: 900;
-        text-align: center;
-    }
-
-    .sub-title h3 {
-        color: #939393;
-        font-weight: 500;
-        font-size: 1.2rem;
-        text-align: center;
-    }
-
-    .sub-title.errorSubtitle h3 {
-        color: $red;
-        font-weight: 400;
-    }
-
-    .login-submit {
-        button {
-            background-color: $blue;
-            width: 100%;
-            border: none;
-            outline: none;
-            color: white;
-            padding: 0.4rem 0.9rem;
-            border-radius: $borderRadius;
-        }
-    }
-}
-
-.teacher-quizzes {
-    .page-name h2 {
-        color: $black;
-    }
-
-    .quiz {
-        .date {
-            width: 100%;
-
-            p {
-                color: $greyDarker;
-                font-weight: 600;
-                margin: 0;
-                font-size: 1.1rem;
-            }
-
-            .line {
-                width: 90%;
-                border-bottom: 1px solid $greyLight;
-            }
-        }
-
-        .body {
-            background-color: #efeff0;
-            border-radius: $borderRadius;
-            position: relative;
-            width: 100%;
-            height: 100px;
-            padding: 10px 35px;
-
-            .top {
-                .quiz-number {
-                    color: $green;
-                    font-weight: bold;
-                    font-size: 1.4rem;
-                }
-
-                .line {
-                    height: 25px;
-                    border-right: 1px solid $greyLight;
-                }
-
-                .quiz-name {
-                    color: $greyDarker;
-                    font-weight: bold;
-                    font-size: 1.4rem;
-                }
-            }
-
-            .bottom {
-                color: $blueLight;
-                font-size: 1rem;
-                font-weight: 700;
-            }
-
-            .blue-decor {
-                top: 0;
-                left: 0;
-                background-color: $blueLight;
-                border-radius: $borderRadius 0 0 $borderRadius;
-                width: 12px;
-                height: 100%;
-                position: absolute;
-            }
-
-            .section {
-                color: #fff;
-                padding: 4px 10px;
-                position: absolute;
-                bottom: 0;
-                right: 0;
-                background-color: $green;
-                border-radius: $borderRadius 0 $borderRadius 0;
-                font-weight: 500;
-            }
-        }
-    }
-}
-
-.create-quiz {
-    .sub-title {
-        font-size: 1.2rem;
-        color: $greyDarker;
-    }
-
-    .input-title {
-        font-size: 1rem;
-        color: $black;
-        font-weight: 500;
-    }
+.page-name {
+    color: $black;
 }
 
 .question-title {
@@ -280,5 +140,186 @@
 
     button {
         width: 3rem;
+    }
+}
+
+.answers {
+    .answer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        color: #A2A2A2;
+        font-weight: 500;
+        background-color: #f8f8f9;
+        position: relative;
+        min-height: 60px;
+        border-radius: $borderRadius;
+    }
+
+    .answer.correct {
+        color: white;
+        background: $green;
+    }
+}
+
+.auth-body {
+    background: #E5E5E5;
+
+    .background {
+        background-image: url("../images/auth_bg.png");
+        background-position: center 56vh;
+        background-repeat: no-repeat;
+        height: 100vh;
+    }
+
+    .logo {
+        width: 4.5rem;
+        height: 4.5rem;
+        border-radius: 50%;
+        background-image: url("../images/logo_180.png");
+        background-position: center center;
+        background-size: 100% 100%;
+        margin: 0 auto;
+    }
+
+    .logo-title h2 {
+        color: $black;
+        font-size: 2rem;
+        font-weight: 900;
+        text-align: center;
+    }
+
+    .sub-title h3 {
+        color: #939393;
+        font-weight: 500;
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .sub-title.errorSubtitle h3 {
+        color: $red;
+        font-weight: 400;
+    }
+
+    .login-submit {
+        button {
+            background-color: $blue;
+            width: 100%;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 0.4rem 0.9rem;
+            border-radius: $borderRadius;
+        }
+    }
+}
+
+.teacher-quizzes {
+    .quiz {
+        .date {
+            width: 100%;
+
+            p {
+                color: $greyDarker;
+                font-weight: 600;
+                margin: 0;
+                font-size: 1.1rem;
+            }
+
+            .line {
+                width: 90%;
+                border-bottom: 1px solid $greyLight;
+            }
+        }
+
+        .body {
+            background-color: #efeff0;
+            border-radius: $borderRadius;
+            position: relative;
+            width: 100%;
+            height: 100px;
+            padding: 10px 35px;
+
+            .top {
+                .quiz-number {
+                    color: $green;
+                    font-weight: bold;
+                    font-size: 1.4rem;
+                }
+
+                .line {
+                    height: 25px;
+                    border-right: 1px solid $greyLight;
+                }
+
+                .quiz-name {
+                    color: $greyDarker;
+                    font-weight: bold;
+                    font-size: 1.4rem;
+                }
+            }
+
+            .bottom {
+                color: $blueLight;
+                font-size: 1rem;
+                font-weight: 700;
+            }
+
+            .blue-decor {
+                top: 0;
+                left: 0;
+                background-color: $blueLight;
+                border-radius: $borderRadius 0 0 $borderRadius;
+                width: 12px;
+                height: 100%;
+                position: absolute;
+            }
+
+            .section {
+                color: #fff;
+                padding: 4px 10px;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                background-color: $green;
+                border-radius: $borderRadius 0 $borderRadius 0;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+#create-quiz-page {
+    .sub-title {
+        font-size: 1.2rem;
+        color: $greyDarker;
+    }
+
+    .input-title {
+        font-size: 1rem;
+        color: $black;
+        font-weight: 500;
+    }
+}
+
+#read-quiz-page {
+    .page-name {
+        text-align: center;
+    }
+
+    .quiz-info {
+        text-align: end;
+
+        .date {
+            color: $green;
+            font-size: 1.2rem;
+            font-weight: bolder;
+        }
+
+        .duration {
+            color: $placeholderColor;
+            font-weight: 500;
+        }
     }
 }

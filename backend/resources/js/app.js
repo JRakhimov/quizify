@@ -6,4 +6,12 @@
  */
 
 require('./bootstrap');
-require('./create_quiz/create_quiz');
+const { onCreateQuizInit } = require('./create_quiz');
+
+const createQuizPage = $("#create-quiz-page");
+
+$(document).ready(function () {
+    if (createQuizPage != null) {
+        onCreateQuizInit();
+    }
+});
