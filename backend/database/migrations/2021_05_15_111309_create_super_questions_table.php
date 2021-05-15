@@ -21,6 +21,7 @@ class CreateSuperQuestionsTable extends Migration
             $table->unsignedBigInteger('question_type_id');
             $table->foreign('question_type_id')->references('id')->on('question_types');
             $table->timestamps();
+            $table->unsignedInteger('points');
         });
     }
 
@@ -32,5 +33,6 @@ class CreateSuperQuestionsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('super_questions');
+
     }
 }
