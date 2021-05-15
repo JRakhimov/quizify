@@ -17,6 +17,6 @@ class Teacher extends Model
 
     public function quizes()
     {
-        return $this->hasMany(\App\Quiz::class);
+        return $this->hasMany(Quiz::class);
     }
 }
