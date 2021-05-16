@@ -1,19 +1,19 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url("https://fonts.googleapis.com/css?family=Nunito");
 
 // Variables
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 @import "~font-awesome/scss/font-awesome.scss";
 @import "~css-ripple-effect/dist/ripple.min.css";
 
-@import 'variables';
+@import "variables";
 
-@import 'base';
+@import "base";
 @import "inputs";
-@import 'buttons';
-@import 'shared';
+@import "buttons";
+@import "shared";
 
 .page-name {
     color: $black;
@@ -149,7 +149,7 @@
         justify-content: center;
         align-items: center;
 
-        color: #A2A2A2;
+        color: #a2a2a2;
         font-weight: 500;
         background-color: #f8f8f9;
         position: relative;
@@ -164,7 +164,7 @@
 }
 
 .auth-body {
-    background: #E5E5E5;
+    background: #e5e5e5;
 
     .background {
         background-image: url("../images/auth_bg.png");
@@ -290,6 +290,56 @@
     }
 }
 
+.main {
+    background-image: url("../images/bg.jpg");
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+    &-content-github_link {
+        display: inline-block;
+    }
+}
+.main-header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding-top: 30px;
+    &-wrapper {
+        padding-top: 30px;
+    }
+    &_logo {
+        font-size: 40px;
+    }
+    &_login-btn {
+        background-color: $violet;
+        border-radius: 10px;
+        padding: 10px 35px;
+        display: block;
+        border: none;
+        border-color: none;
+    }
+}
+.github-icon {
+    width: 60px;
+    height: auto;
+    display: block;
+}
+.happy-girl {
+    width: 600px;
+    height: auto;
+}
+.content-row {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.role-choose-bg {
+    background-image: url("../images/choose-role.jpg");
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+}
 #create-quiz-page {
     .sub-title {
         font-size: 1.2rem;

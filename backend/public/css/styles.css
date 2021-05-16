@@ -14311,7 +14311,7 @@ header .log-out {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #A2A2A2;
+  color: #a2a2a2;
   font-weight: 500;
   background-color: #f8f8f9;
   position: relative;
@@ -14325,7 +14325,7 @@ header .log-out {
 }
 
 .auth-body {
-  background: #E5E5E5;
+  background: #e5e5e5;
 }
 
 .auth-body .background {
@@ -14441,6 +14441,66 @@ header .log-out {
   background-color: #00acb3;
   border-radius: 7px 0 7px 0;
   font-weight: 500;
+}
+
+.main {
+  background-image: url(/images/bg.jpg?512c41da9067e37162d23615365591b6);
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.main-content-github_link {
+  display: inline-block;
+}
+
+.main-header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding-top: 30px;
+}
+
+.main-header-wrapper {
+  padding-top: 30px;
+}
+
+.main-header_logo {
+  font-size: 40px;
+}
+
+.main-header_login-btn {
+  background-color: #8574a1;
+  border-radius: 10px;
+  padding: 10px 35px;
+  display: block;
+  border: none;
+  border-color: none;
+}
+
+.github-icon {
+  width: 60px;
+  height: auto;
+  display: block;
+}
+
+.happy-girl {
+  width: 600px;
+  height: auto;
+}
+
+.content-row {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.role-choose-bg {
+  background-image: url(/images/choose-role.jpg?356d2c346578b2a3a705ea0d83d7a400);
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
 }
 
 #create-quiz-page .sub-title {
