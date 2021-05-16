@@ -18,8 +18,8 @@ class CreateMultipleQuestionAnswersTable extends Migration
             $table->unsignedBigInteger('super_question_id');
             $table->foreign('super_question_id')->references('id')->on('super_questions');
             $table->string('answer');
-            $table->unsignedBigInteger('multiple_question_option_set_id');
-            $table->foreign('multiple_question_option_set_id')->references('id')->on('multiple_question_option_sets');
+            $table->unsignedBigInteger('option_set_id');
+            $table->foreign('option_set_id')->references('id')->on('multiple_question_option_sets');
             $table->timestamps();
         });
     }

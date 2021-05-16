@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStudentQuizzesTable extends Migration
+class CreateMultipleQuestionOptionSetsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateStudentQuizzesTable extends Migration
      */
     public function up()
     {
-        Schema::create('student_quizzes', function (Blueprint $table) {
+        Schema::create('multiple_question_option_sets', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('student_id');
-            $table->foreign('student_id')->references('id')->on('students');
-            $table->unsignedBigInteger('quiz_id');
-            $table->foreign('quiz_id')->references('id')->on('quizzes');
+            $table->string('option1');
+            $table->string('option2');
+            $table->string('option3');
+            $table->string('option4');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateStudentQuizzesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('student_quizzes');
+        Schema::dropIfExists('multiple_question_option_sets');
     }
 }
