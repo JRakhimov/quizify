@@ -37161,7 +37161,15 @@ module.exports = function(module) {
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-__webpack_require__(/*! ./create_quiz/create_quiz */ "./resources/js/create_quiz/create_quiz.js");
+var _require = __webpack_require__(/*! ./create_quiz */ "./resources/js/create_quiz/index.js"),
+    onCreateQuizInit = _require.onCreateQuizInit;
+
+var createQuizPage = $("#create-quiz-page");
+$(document).ready(function () {
+  if (createQuizPage != null) {
+    onCreateQuizInit();
+  }
+});
 
 /***/ }),
 
@@ -37223,10 +37231,10 @@ if (token) {
 
 /***/ }),
 
-/***/ "./resources/js/create_quiz/create_quiz.js":
-/*!*************************************************!*\
-  !*** ./resources/js/create_quiz/create_quiz.js ***!
-  \*************************************************/
+/***/ "./resources/js/create_quiz/index.js":
+/*!*******************************************!*\
+  !*** ./resources/js/create_quiz/index.js ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -37250,13 +37258,13 @@ var Question = function Question(id, type, points, element) {
   this.element = element;
 };
 
-var questionsElement = $("#questions");
-var addQuestionButton = $("#add-question");
-var createQuizButton = $("#create-quiz");
-var typeSelector = $("#type-selector");
-var questionPoints = $("#question-points");
-var questions = [];
-$(document).ready(function () {
+function onCreateQuizInit() {
+  var questionsElement = $("#questions");
+  var addQuestionButton = $("#add-question");
+  var createQuizButton = $("#create-quiz");
+  var typeSelector = $("#type-selector");
+  var questionPoints = $("#question-points");
+  var questions = [];
   addQuestionButton.on("click", function (_) {
     var selected = typeSelector.children("option:selected").val();
 
@@ -37292,7 +37300,11 @@ $(document).ready(function () {
   if (questionsElement.children().length === 1) {
     questionsElement.hide();
   }
-});
+}
+
+module.exports = {
+  onCreateQuizInit: onCreateQuizInit
+};
 
 /***/ }),
 
@@ -37428,8 +37440,8 @@ module.exports = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Development\Projects\Education\quizify\backend\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\Development\Projects\Education\quizify\backend\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Applications/Work/IP/quizify/backend/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Applications/Work/IP/quizify/backend/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

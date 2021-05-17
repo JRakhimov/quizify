@@ -15,10 +15,10 @@
 @section('content')
     @include('partials.teacher_header')
 
-    <div class="container mt-3 mb-5 create-quiz">
-        <div class="row page-name">
+    <div id="create-quiz-page" class="container mt-3 mb-5">
+        <div class="row">
             <div class="col">
-                <h2>Create a quiz</h2>
+                <h2 class="page-name">Create a quiz</h2>
             </div>
         </div>
 
@@ -30,20 +30,10 @@
                     <h4 class="input-title mb-1">Subject</h4>
 
                     <label class="app-select-label">
-                        <select class="app-select-option">
-                            <option value="hide">Choose the subject</option>
+                        <select class="app-select-option" disabled>
                             <option value="Math">Math</option>
                         </select>
                     </label>
-                </div>
-
-                <div class="col-4">
-                    <h4 class="input-title mb-1">Date</h4>
-
-                    <div class="d-flex">
-                        <input type="number" class="app-input mr-2" placeholder="Day">
-                        <input type="number" class="app-input" placeholder="Month">
-                    </div>
                 </div>
 
                 <div class="col-4">

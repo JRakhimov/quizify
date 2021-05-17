@@ -9,14 +9,14 @@ class Question {
     }
 }
 
-const questionsElement = $("#questions");
-const addQuestionButton = $("#add-question");
-const createQuizButton = $("#create-quiz");
-const typeSelector = $("#type-selector");
-const questionPoints = $("#question-points");
-const questions = [];
+function onCreateQuizInit() {
+    const questionsElement = $("#questions");
+    const addQuestionButton = $("#add-question");
+    const createQuizButton = $("#create-quiz");
+    const typeSelector = $("#type-selector");
+    const questionPoints = $("#question-points");
+    const questions = [];
 
-$(document).ready(function () {
     addQuestionButton.on("click", function (_) {
         const selected = typeSelector.children("option:selected").val();
 
@@ -44,4 +44,6 @@ $(document).ready(function () {
     if (questionsElement.children().length === 1) {
         questionsElement.hide();
     }
-});
+}
+
+module.exports = { onCreateQuizInit }
