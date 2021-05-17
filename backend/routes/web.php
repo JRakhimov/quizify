@@ -12,9 +12,12 @@
 */
 
 Route::get('/', function () {
-    return "welcome";
+    return view('welcome');
 });
-
+Route::get('/login', function () {
+    return view('login');
+});
+Route::post('/', 'CheckRoleController@postRoleType');
 Route::group(['prefix' => 'teacher'], function () {
     Route::get('', function () {
         return view('teacher.index');
