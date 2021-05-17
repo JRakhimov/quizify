@@ -11,7 +11,6 @@ class AuthController extends Controller
 {
     public function getSignUpStudent()
     {
-        //todo add a corresponding view
         return view('student.sign_up');
     }
 
@@ -49,19 +48,17 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::guard('student_web')->attempt($credentials)) {
-            dd('OK');
-            //todo redirect to student main page
+            return redirect()->route('studentIndex');
         }
 
         return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
+            'error' => 'The provided credentials do not match our records.',
         ]);
     }
 
     public function getSignUpTeacher()
     {
-        //todo add corresponding view
-        return view('auth.signUpTeacher');
+        return view('teacher.sign_up');
     }
 
     public function postSignUpTeacher(Request $request)
@@ -82,7 +79,7 @@ class AuthController extends Controller
             'subject' => $request->input('subject'),
         ]);
 
-        return redirect()->route('home')->with('info', 'You are registered successfully!');
+        return redirect()->route('home')->with('info', 'You have registered successfully!');
     }
 
     public function getSignInTeacher()
@@ -100,12 +97,11 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::guard('teacher_web')->attempt($credentials)) {
-            dd('OK');
-            //todo redirect to teacher main page
+            return redirect()->route('teacherIndex')->with('info', 'You have registered successfully!');
         }
 
         return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
+            'error' => 'The provided credentials do not match our records.',
         ]);
     }
 

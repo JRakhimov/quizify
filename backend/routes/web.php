@@ -21,7 +21,7 @@ Route::post('/', 'CheckRoleController@postRoleType');
 Route::group(['prefix' => 'teacher'], function () {
     Route::get('', function () {
         return view('teacher.index');
-    });
+    })->name('teacherIndex');
 
     Route::get('/sign-in', 'AuthController@getSignInTeacher')->name('signInTeacher');
     Route::post('/sign-in', 'AuthController@postSignInTeacher');
@@ -43,15 +43,13 @@ Route::group(['prefix' => 'teacher'], function () {
 });
 
 Route::group(['prefix' => 'student'], function () {
+    Route::get('', function () {
+        return view('student.index');
+    })->name('studentIndex');
+
     Route::get('/sign-in', 'AuthController@getSignInStudent')->name('signInStudent');
     Route::post('/sign-in', 'AuthController@postSignInStudent');
 
     Route::get('/sign-up', 'AuthController@getSignUpStudent')->name('signUpStudent');
     Route::post('/sign-up', 'AuthController@postSignUpStudent');
 });
-
-// Route::get('/signUp', 'AuthController@getSignup')->name('auth.signUp');
-// Route::post('/signUp', 'AuthController@postSignup');
-
-Route::get('/signIn', 'AuthController@getSignin')->name('auth.signIn');
-Route::post('/signIn', 'AuthController@postSignin');
