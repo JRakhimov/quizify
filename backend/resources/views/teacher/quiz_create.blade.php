@@ -31,7 +31,7 @@
 
                     <label class="app-select-label">
                         <select class="app-select-option" disabled>
-                            <option>Calculus</option>
+                            <option value="Math">Math</option>
                         </select>
                     </label>
                 </div>

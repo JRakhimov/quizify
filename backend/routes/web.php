@@ -50,8 +50,8 @@ Route::group(['prefix' => 'student'], function () {
     Route::post('/sign-up', 'AuthController@postSignUpStudent');
 });
 
-Route::get('/signUp', 'AuthController@getSignup')->name('auth.signUp');
-Route::post('/signUp', 'AuthController@postSignup');
+// Route::get('/signUp', 'AuthController@getSignup')->name('auth.signUp');
+// Route::post('/signUp', 'AuthController@postSignup');
 
 Route::get('/signIn', 'AuthController@getSignin')->name('auth.signIn');
 Route::post('/signIn', 'AuthController@postSignin');
