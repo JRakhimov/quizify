@@ -37,6 +37,11 @@
                         <button type="submit" class="app-raised-button w-100 ripple">Login</button>
                     </div>
 
+                    <div class="mt-3">
+                        <a href="{{route('signUpTeacher')}}" class="app-raised-button w-50">
+                            Sign Up
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
