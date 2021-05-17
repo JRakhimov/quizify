@@ -14324,7 +14324,14 @@ header .log-out {
   background: #00acb3;
 }
 
-.logo {
+.auth-body .background {
+  background-image: url(/images/choose-role.jpg?356d2c346578b2a3a705ea0d83d7a400);
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.auth-body .logo {
   width: 4.5rem;
   height: 4.5rem;
   border-radius: 50%;
@@ -14332,13 +14339,6 @@ header .log-out {
   background-position: center center;
   background-size: 100% 100%;
   margin: 0 auto;
-}
-
-.auth-body .background {
-  background-image: url(/images/choose-role.jpg?356d2c346578b2a3a705ea0d83d7a400);
-  background-position: center center;
-  background-size: cover;
-  height: 100vh;
 }
 
 .auth-body .logo-title h2 {
@@ -14353,6 +14353,11 @@ header .log-out {
   font-weight: 500;
   font-size: 1.2rem;
   text-align: center;
+}
+
+.auth-body .app-input,
+.auth-body .app-select-option {
+  background: #fff;
 }
 
 .auth-body .sub-title.errorSubtitle h3 {
@@ -14490,13 +14495,6 @@ header .log-out {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.role-choose-bg {
-  background-image: url(/images/choose-role.jpg?356d2c346578b2a3a705ea0d83d7a400);
-  background-position: center center;
-  background-size: cover;
-  height: 100vh;
 }
 
 #create-quiz-page .sub-title {

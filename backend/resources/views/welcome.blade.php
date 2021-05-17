@@ -1,8 +1,11 @@
 @extends('layouts.master')
+
+@section('page-title')
+    Welcome to Quizify
+@endsection
+
 @section('content')
 <div class="main">
-
-
     <div class="main-header">
         <div class="container">
             <div class="main-header_wrapper d-flex align-items-center justify-content-between">
@@ -21,7 +24,7 @@
                         written there!</h1>
                     <p class="mt-3">Some features given</p>
 
-                    <a href="#" class="main-content-github_link mt-5">
+                    <a href="https://github.com/JRakhimov/quizify" class="main-content-github_link mt-5">
                         <img class="github-icon" src="../images/github-icon.svg" alt="">
                     </a>
 

@@ -9,7 +9,7 @@
 @endsection
 
 @section("logout-url")
-    /teacher/sign-in
+    /login
 @endsection
 
 @section('content')

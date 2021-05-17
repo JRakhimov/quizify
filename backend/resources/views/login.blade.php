@@ -1,12 +1,11 @@
-@extends('layouts.master')
+@extends('layouts.sign_in')
 
 @section('page-title')
     Choose your position
 @endsection
 
 @section('content')
-<div class="role-choose-bg">
-    <form action="{{ action('CheckRoleController@postRoleType') }}" method="post" class="h-100">
+<form action="{{ action('CheckRoleController@postRoleType') }}" method="post" class="h-100">
         @csrf
         <div class="container-fluid h-100">
             <div class="row text-center justify-content-center align-content-center h-100">
@@ -14,11 +13,11 @@
                     <div class="logo"></div>
 
                     <div class="logo-title">
-                        <h2 class="font-weight-bold">Quizify</h2>
+                        <h2>Quizify</h2>
                     </div>
 
                     <div class="sub-title mt-3">
-                        <p>Choose your position</p>
+                        <h3>Choose your position</h3>
                     </div>
 
 
@@ -38,5 +37,4 @@
             </div>
         </div>
     </form>
-</div>
 @endsection
