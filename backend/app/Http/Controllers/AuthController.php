@@ -12,7 +12,7 @@ class AuthController extends Controller
     public function getSignUpStudent()
     {
         //todo add a corresponding view
-        return view('auth.signup');
+        return view('student.sign_up');
     }
 
     public function postSignUpStudent(Request $request)

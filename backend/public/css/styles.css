@@ -14324,18 +14324,7 @@ header .log-out {
   background: #00acb3;
 }
 
-.auth-body {
-  background: #e5e5e5;
-}
-
-.auth-body .background {
-  background-image: url(/images/auth_bg.png?f6abf21a400610a7a3a6eee45556db88);
-  background-position: center 56vh;
-  background-repeat: no-repeat;
-  height: 100vh;
-}
-
-.auth-body .logo {
+.logo {
   width: 4.5rem;
   height: 4.5rem;
   border-radius: 50%;
@@ -14343,6 +14332,13 @@ header .log-out {
   background-position: center center;
   background-size: 100% 100%;
   margin: 0 auto;
+}
+
+.auth-body .background {
+  background-image: url(/images/choose-role.jpg?356d2c346578b2a3a705ea0d83d7a400);
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
 }
 
 .auth-body .logo-title h2 {

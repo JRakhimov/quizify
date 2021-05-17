@@ -1,4 +1,9 @@
 @extends('layouts.master')
+
+@section('page-title')
+    Choose your position
+@endsection
+
 @section('content')
 <div class="role-choose-bg">
     <form action="{{ action('CheckRoleController@postRoleType') }}" method="post" class="h-100">
@@ -6,6 +11,8 @@
         <div class="container-fluid h-100">
             <div class="row text-center justify-content-center align-content-center h-100">
                 <div class="col-3 pt-5">
+                    <div class="logo"></div>
+
                     <div class="logo-title">
                         <h2 class="font-weight-bold">Quizify</h2>
                     </div>
@@ -27,7 +34,6 @@
                     <div class="mt-3">
                         <button type="submit" class="app-raised-button w-100 ripple">Continue</button>
                     </div>
-
                 </div>
             </div>
         </div>
