@@ -44,6 +44,7 @@ const createAnswerVariant = (options) => {
 
     if (options.canBeDeleted) {
         const deleteButton = document.createElement("button");
+        $(deleteButton).attr("type", "button");
         $(deleteButton).addClass(["app-raised-button", "red", "ripple"]);
         $(deleteButton).append('<i class="fa fa-trash" aria-hidden="true"></i>');
         $(deleteButton).on('click', () => $(parent).remove());
@@ -59,6 +60,7 @@ const createAddButton = (destination, createOption) => {
     $(parent).addClass(["d-flex", "my-2"]);
 
     const addAnswerButton = document.createElement("button");
+    $(addAnswerButton).attr("type", "button");
     $(addAnswerButton).addClass(["app-raised-button", "green", "ripple", "ml-auto"]);
     $(addAnswerButton).append('<i class="fa fa-plus" aria-hidden="true"></i>');
     $(addAnswerButton).on("click", () => $(destination).append(createAnswerVariant(createOption)));
@@ -77,7 +79,6 @@ const createNewQuestion = (index, type) => {
     $(questionTitle).append(`<div class="question-number">${index}</div>`);
     $(questionTitle).append(`
        <textarea
-        name="Question input"
         rows="2"
         class="question-input"
         placeholder="Type a question..."
