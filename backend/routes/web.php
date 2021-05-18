@@ -39,6 +39,9 @@ Route::group(['prefix' => 'teacher'], function () {
 });
 
 Route::group(['prefix' => 'student'], function () {
+    Route::get('', function () {
+        return view('student.index');
+    })->name('studentIndex');
     Route::get('/sign-in', 'AuthController@getSignInStudent')->name('signInStudent');
     Route::post('/sign-in', 'AuthController@postSignInStudent');
 
