@@ -55,3 +55,7 @@ Route::group(['prefix' => 'student'], function () {
 
 Route::get('/signIn', 'AuthController@getSignin')->name('auth.signIn');
 Route::post('/signIn', 'AuthController@postSignin');
+
+Route::get('/test', function () {
+    return view('teacher.list_of_students');
+});
