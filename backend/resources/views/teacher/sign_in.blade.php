@@ -44,6 +44,11 @@
                     </div>
                 </div>
             </div>
+
+            <div class="mt-2">
+                <a class="btn btn-success d-block text-white" href="/teacher/sign-up" role="button">Sign Up</a>
+            </div>
+
         </div>
     </form>
 @endsection

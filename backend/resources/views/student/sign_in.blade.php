@@ -44,6 +44,9 @@
                         </a>
                     </div>
                 </div>
+                <div class="mt-2">
+                    <a class="btn btn-success d-block text-white" href="/student/sign-up" role="button">Sign Up</a>
+                </div>
             </div>
         </div>
     </form>
