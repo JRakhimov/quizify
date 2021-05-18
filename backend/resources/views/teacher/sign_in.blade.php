@@ -33,6 +33,11 @@ Teacher login
             <div class="mt-3">
                 <button class="app-raised-button w-100 ripple">Login</button>
             </div>
+
+            <div class="mt-2">
+                <a class="btn btn-success d-block text-white" href="/teacher/sign-up" role="button">Sign Up</a>
+            </div>
+
         </div>
     </div>
     @endsection

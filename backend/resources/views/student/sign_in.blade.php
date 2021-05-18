@@ -37,6 +37,9 @@ Student login
                 <div class="mt-3">
                     <button type="submit" class="app-raised-button w-100 ripple">Login</button>
                 </div>
+                <div class="mt-2">
+                    <a class="btn btn-success d-block text-white" href="/student/sign-up" role="button">Sign Up</a>
+                </div>
             </div>
         </div>
     </div>
