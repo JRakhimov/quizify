@@ -29,15 +29,11 @@ Route::group(['prefix' => 'teacher'], function () {
     Route::get('/sign-up', 'AuthController@getSignUpTeacher')->name('signUpTeacher');
     Route::post('/sign-up', 'AuthController@postSignUpTeacher');
 
-    Route::get('/sign-up', function () {
-        return view('teacher.sign_up');
-    });
-
-    Route::get('/quiz/create', function () {
+    Route::get('/quiz/create', function(){
         return view('teacher.quiz_create');
     });
 
-    Route::get('/quiz/1', function () {
+    Route::get('/quiz/1', function() {
         return view('teacher.quiz');
     });
 });

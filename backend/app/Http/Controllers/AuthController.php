@@ -76,7 +76,7 @@ class AuthController extends Controller
             'last_name' => $request->input('last_name'),
             'email' => $request->input('email'),
             'password' => bcrypt($request->input('password')),
-            'subject' => $request->input('subject'),
+            'subject_id' => $request->input('subject'),
         ]);
 
         return redirect()->route('home')->with('info', 'You have registered successfully!');
