@@ -33,17 +33,16 @@
                     </div>
 
                     <label class="app-select-label mt-3">
-                        <input name="email" id="email" class="app-input" type="text" placeholder="Subject" required>
-    {{--   <select class="app-select-option">
-         <option value="null" selected disabled>Choose the subject</option>
-     </select>--}}
- </label>
+                        <select class="app-select-option">
+                            <option value="null" selected disabled>Choose the subject</option>
+                        </select>
+                    </label>
 
- <div class="mt-3">
-     <button class="app-raised-button w-100 ripple">Sign up</button>
- </div>
-</div>
-</div>
-</div>
-</form>
+                    <div class="mt-3">
+                        <button class="app-raised-button w-100 ripple">Sign up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
 @endsection
