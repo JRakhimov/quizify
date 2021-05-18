@@ -14451,10 +14451,6 @@ header .log-out {
   height: 100vh;
 }
 
-.main-content-github_link {
-  display: inline-block;
-}
-
 .main-header {
   position: absolute;
   top: 0;
@@ -14479,8 +14475,8 @@ header .log-out {
   border-color: none;
 }
 
-.github-icon {
-  width: 60px;
+.main-content_icon {
+  max-width: 60px;
   height: auto;
   display: block;
 }
