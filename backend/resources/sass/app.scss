@@ -302,9 +302,6 @@
     background-position: center center;
     background-size: cover;
     height: 100vh;
-    &-content-github_link {
-        display: inline-block;
-    }
 }
 .main-header {
     position: absolute;
@@ -326,8 +323,8 @@
         border-color: none;
     }
 }
-.github-icon {
-    width: 60px;
+.main-content_icon{
+    max-width: 60px;
     height: auto;
     display: block;
 }
