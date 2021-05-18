@@ -1,38 +1,54 @@
 @extends('layouts.sign_in')
 
 @section('page-title')
-Teacher login
+    Teacher login
 @endsection
 
 @section('content')
-<div class="container-fluid h-100">
-    <div class="row justify-content-center align-content-center h-100">
-        <div class="col-3">
-            <div class="logo"></div>
+    <form method="post" action="{{route("signInTeacher")}} ">
+        @csrf
+        <div class="container-fluid h-100">
+            <div class="row justify-content-center align-content-center h-100">
+                <div class="col-3">
+                    <div class="logo"></div>
 
-            <div class="logo-title">
-                <h2>Quizify</h2>
+                    <div class="logo-title">
+                        <h2>Quizify</h2>
+                    </div>
+
+                    <div class="sub-title mt-3">
+                        <h3>Login to continue</h3>
+                    </div>
+
+                    {{--                <div class="sub-title" :class="{ errorSubtitle: isError }">--}}
+                    {{--                    <h3>{{ subTitle }}</h3>--}}
+                    {{--                </div>--}}
+
+                    <div class="mt-3">
+                        <input name="email" id="email" class="app-input" type="text" placeholder="Email" required>
+                    </div>
+
+                    <div class="mt-3">
+                        <input name="password" id="password" class="app-input" type="password" placeholder="Password"
+                               required>
+                    </div>
+
+                    <div class="mt-3">
+                        <button type="submit" class="app-raised-button w-100 ripple">Login</button>
+                    </div>
+
+                    <div class="mt-3">
+                        <a href="{{route('signUpTeacher')}}" class="app-raised-button w-50">
+                            Sign Up
+                        </a>
+                    </div>
+                </div>
             </div>
 
-            <div class="sub-title mt-3">
-                <h3>Login to continue</h3>
+            <div class="mt-2">
+                <a class="btn btn-success d-block text-white" href="/teacher/sign-up" role="button">Sign Up</a>
             </div>
 
-            {{--                <div class="sub-title" :class="{ errorSubtitle: isError }">--}}
-            {{--                    <h3>{{ subTitle }}</h3>--}}
-            {{--                </div>--}}
-
-            <div class="mt-3">
-                <input class="app-input" type="text" placeholder="Email" required>
-            </div>
-
-            <div class="mt-3">
-                <input class="app-input" type="password" placeholder="Password" required>
-            </div>
-
-            <div class="mt-3">
-                <button class="app-raised-button w-100 ripple">Login</button>
-            </div>
         </div>
-    </div>
-    @endsection
+    </form>
+@endsection

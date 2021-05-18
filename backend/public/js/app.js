@@ -37238,6 +37238,12 @@ if (token) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
@@ -37249,43 +37255,73 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 var _require = __webpack_require__(/*! ./question_constructor */ "./resources/js/create_quiz/question_constructor.js"),
     createNewQuestion = _require.createNewQuestion;
 
-var Question = function Question(id, type, points, element) {
-  _classCallCheck(this, Question);
+var QuestionElement = function QuestionElement(type, points, element) {
+  _classCallCheck(this, QuestionElement);
 
-  this.id = id;
   this.type = type;
   this.points = points;
   this.element = element;
 };
 
+function getQuestionData(element) {
+  var answers = [];
+  var questionText = $($($(element).children(".question-title")[0]).children(".question-input")[0]).val();
+  var answerElements = $(element).children(".question-answer-variant");
+
+  var _iterator = _createForOfIteratorHelper(answerElements),
+      _step;
+
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var _element = _step.value;
+      var answerText = $($(_element).children(".answer-input")[0]).val();
+      var isRightAnswer = $(_element).children(".radio-btn")[0].classList.contains("checked");
+      answers.push({
+        answerText: answerText,
+        isRightAnswer: isRightAnswer
+      });
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+
+  return {
+    questionText: questionText,
+    answers: answers
+  };
+}
+
 function onCreateQuizInit() {
   var questionsElement = $("#questions");
-  var addQuestionButton = $("#add-question");
-  var createQuizButton = $("#create-quiz");
   var typeSelector = $("#type-selector");
+  var addQuestionButton = $("#add-question");
   var questionPoints = $("#question-points");
+  var createQuizForm = $("#create-quiz-form");
+  var hiddenQuestionsInput = $("#hidden-questions-input");
   var questions = [];
+  var formCalculated = false;
   addQuestionButton.on("click", function (_) {
     var selected = typeSelector.children("option:selected").val();
 
     if (selected !== "null") {
-      var id = questions.length + 1;
-      var question = new Question(id, selected, questionPoints.val(), createNewQuestion(id, selected));
+      var question = new QuestionElement(selected, questionPoints.val(), createNewQuestion(questions.length + 1, selected));
       questions.push(question);
       questionsElement.empty();
 
-      var _iterator = _createForOfIteratorHelper(questions),
-          _step;
+      var _iterator2 = _createForOfIteratorHelper(questions),
+          _step2;
 
       try {
-        for (_iterator.s(); !(_step = _iterator.n()).done;) {
-          var _question = _step.value;
+        for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+          var _question = _step2.value;
           questionsElement.append(_question.element);
         }
       } catch (err) {
-        _iterator.e(err);
+        _iterator2.e(err);
       } finally {
-        _iterator.f();
+        _iterator2.f();
       }
 
       typeSelector.val("null");
@@ -37293,8 +37329,35 @@ function onCreateQuizInit() {
       questionsElement.show();
     }
   });
-  createQuizButton.on("click", function (_) {
-    console.log(questions);
+  createQuizForm.submit(function (e) {
+    if (!formCalculated) {
+      e.preventDefault();
+      var _questions = [];
+
+      var _iterator3 = _createForOfIteratorHelper(questions),
+          _step3;
+
+      try {
+        for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+          var question = _step3.value;
+
+          _questions.push(_objectSpread({
+            type: question.type,
+            points: question.points
+          }, getQuestionData(question.element)));
+        }
+      } catch (err) {
+        _iterator3.e(err);
+      } finally {
+        _iterator3.f();
+      }
+
+      hiddenQuestionsInput.val(JSON.stringify(_questions));
+      formCalculated = true;
+      createQuizForm.submit();
+    } else {
+      formCalculated = false;
+    }
   });
 
   if (questionsElement.children().length === 1) {
@@ -37366,6 +37429,7 @@ var createAnswerVariant = function createAnswerVariant(options) {
 
   if (options.canBeDeleted) {
     var deleteButton = document.createElement("button");
+    $(deleteButton).attr("type", "button");
     $(deleteButton).addClass(["app-raised-button", "red", "ripple"]);
     $(deleteButton).append('<i class="fa fa-trash" aria-hidden="true"></i>');
     $(deleteButton).on('click', function () {
@@ -37381,6 +37445,7 @@ var createAddButton = function createAddButton(destination, createOption) {
   var parent = document.createElement("div");
   $(parent).addClass(["d-flex", "my-2"]);
   var addAnswerButton = document.createElement("button");
+  $(addAnswerButton).attr("type", "button");
   $(addAnswerButton).addClass(["app-raised-button", "green", "ripple", "ml-auto"]);
   $(addAnswerButton).append('<i class="fa fa-plus" aria-hidden="true"></i>');
   $(addAnswerButton).on("click", function () {
@@ -37396,7 +37461,7 @@ var createNewQuestion = function createNewQuestion(index, type) {
   var questionTitle = document.createElement("div");
   $(questionTitle).addClass(["question-title", "d-flex", "justify-content-center", "align-items-center", "mb-3"]);
   $(questionTitle).append("<div class=\"question-number\">".concat(index, "</div>"));
-  $(questionTitle).append("\n       <textarea\n        name=\"Question input\"\n        rows=\"2\"\n        class=\"question-input\"\n        placeholder=\"Type a question...\"\n       ></textarea>\n    ");
+  $(questionTitle).append("\n       <textarea\n        rows=\"2\"\n        class=\"question-input\"\n        placeholder=\"Type a question...\"\n       ></textarea>\n    ");
   $(parent).append(questionTitle);
 
   if (type === "text") {
