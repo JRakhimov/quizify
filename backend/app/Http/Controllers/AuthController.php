@@ -30,7 +30,7 @@ class AuthController extends Controller
             'password' => bcrypt($request->input('password')),
         ]);
 
-        return redirect()->route('home')->with('info', 'You are registered successfully!');
+        return redirect()->route('studentIndex')->with('info', 'You are registered successfully!');
     }
 
     public function getSignInStudent()
@@ -68,7 +68,7 @@ class AuthController extends Controller
             'last_name' => 'required',
             'email' => 'required|unique:students|email|max:255',
             'password' => 'required|min:6',
-            'subject' => 'required',
+            'subject_id' => 'required',
         ]);
 
         Teacher::create([
@@ -76,10 +76,12 @@ class AuthController extends Controller
             'last_name' => $request->input('last_name'),
             'email' => $request->input('email'),
             'password' => bcrypt($request->input('password')),
-            'subject_id' => $request->input('subject'),
+            'subject_id' => $request->input('subject_id'),
         ]);
 
-        return redirect()->route('home')->with('info', 'You have registered successfully!');
+
+
+        return redirect()->route('teacherIndex')->with('info', 'You have registered successfully!');
     }
 
     public function getSignInTeacher()
@@ -104,5 +106,4 @@ class AuthController extends Controller
             'error' => 'The provided credentials do not match our records.',
         ]);
     }
-
 }
