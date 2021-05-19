@@ -36,6 +36,10 @@ Route::group(['prefix' => 'teacher'], function () {
     Route::get('/quiz/1', function() {
         return view('teacher.quiz');
     });
+
+    Route::get('/quiz/1/results', function () {
+        return view('teacher.list_of_students');
+    });
 });
 
 Route::group(['prefix' => 'student'], function () {
@@ -47,8 +51,4 @@ Route::group(['prefix' => 'student'], function () {
 
     Route::get('/sign-up', 'AuthController@getSignUpStudent')->name('signUpStudent');
     Route::post('/sign-up', 'AuthController@postSignUpStudent');
-});
-
-Route::get('/test', function () {
-    return view('teacher.list_of_students');
 });
