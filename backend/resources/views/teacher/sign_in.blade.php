@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <form method="post" action="{{route("signInTeacher")}} ">
+    <form method="post" action="{{route("signInTeacher")}} " class="h-100">
         @csrf
         <div class="container-fluid h-100">
             <div class="row justify-content-center align-content-center h-100">
@@ -37,18 +37,13 @@
                         <button type="submit" class="app-raised-button w-100 ripple">Login</button>
                     </div>
 
-                    <div class="mt-3">
-                        <a href="{{route('signUpTeacher')}}" class="app-raised-button w-50">
-                            Sign Up
+                    <div class="mt-3 text-center">
+                        <a class="action-btn" href="{{route('signUpTeacher')}}">
+                            <span>Sign Up</span>
                         </a>
                     </div>
                 </div>
             </div>
-
-            <div class="mt-2">
-                <a class="btn btn-success d-block text-white" href="/teacher/sign-up" role="button">Sign Up</a>
-            </div>
-
         </div>
     </form>
 @endsection

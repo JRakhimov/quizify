@@ -37,16 +37,13 @@
                     <div class="mt-3">
                         <button type="submit" class="app-raised-button w-100 ripple">Login</button>
                     </div>
-
-                    <div class="mt-3">
-                        <a href="{{route('signUpStudent')}}" class="app-raised-button w-50">
-                            Sign Up
+                     <div class="mt-3 text-center">
+                        <a class="action-btn" href="{{route('signUpStudent')}}">
+                            <span>Sign Up</span>
                         </a>
                     </div>
                 </div>
-                <div class="mt-2">
-                    <a class="btn btn-success d-block text-white" href="/student/sign-up" role="button">Sign Up</a>
-                </div>
+              
             </div>
         </div>
     </form>
