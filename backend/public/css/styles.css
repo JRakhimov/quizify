@@ -13997,6 +13997,8 @@ p {
 a,
 a:hover {
   text-decoration: none;
+  color: #fff;
+  cursor: pointer;
 }
 
 [class*=-button],
@@ -14546,5 +14548,77 @@ header .log-out {
 #read-quiz-page .quiz-info .duration {
   color: #b5b6b9;
   font-weight: 500;
+}
+
+#list-of-students .page-name {
+  text-align: center;
+}
+
+#list-of-students .quiz-info {
+  text-align: end;
+}
+
+#list-of-students .quiz-info .date {
+  color: #6d6d6d;
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+
+#list-of-students .quiz-info .duration {
+  color: #b5b6b9;
+  font-weight: 500;
+}
+
+#list-of-students .content-table {
+  font-family: rubik, roboto;
+  border-collapse: collapse;
+  margin: 25px 0;
+  width: 100%;
+}
+
+#list-of-students .content-table thead tr {
+  color: #00ACB3;
+  text-align: left;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+#list-of-students .content-table tbody td {
+  padding: 12px 15px;
+  background: #F4F4F4;
+}
+
+#list-of-students .content-table tbody tr {
+  border-bottom: 10px solid #FFFFFF;
+  padding-bottom: 15px;
+}
+
+#list-of-students td,
+#list-of-students th {
+  text-align: center;
+  padding: 12px;
+}
+
+#list-of-students .app-raised-button:hover {
+  background-color: #6B5989;
+}
+
+#list-of-students .button__icon {
+  vertical-align: middle;
+  display: inline-block;
+  align-items: center;
+  color: #fff;
+  height: 100%;
+  font-size: 8px;
+}
+
+#list-of-students .content-table td:first-of-type {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+#list-of-students .content-table td:last-of-type {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
