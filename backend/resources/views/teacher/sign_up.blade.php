@@ -6,7 +6,7 @@
 @endsection
 
 @section('content')
-    <form method="post" action="{{route("signUpTeacher")}}">
+    <form method="post" action="{{route("signUpTeacher")}}" > 
         @csrf
         <div class="container-fluid h-100">
             <div class="row justify-content-center align-content-center h-100">
