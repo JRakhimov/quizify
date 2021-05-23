@@ -6,10 +6,6 @@
 
 "Quizify" is tool to simplify education process for teachers and students. It's an online platform available for everyone, everywhere. No need to attend educational establishments, just get Quizified!
 
-[https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white](https://www.figma.com/file/F8xgI694OiBHHNAw9ABkTr/IP_Project?node-id=0%3A1)
-
-[https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white](https://github.com/JRakhimov/quizify)
-
 ## Installation
 
 The project is written with Laravel. To run you need php version at least 7.2.5 and MySQL database
@@ -40,5 +36,4 @@ npm install && npm run watch
 ## The note
 The project has been moved from the original [Quizify](https://github.com/JRakhimov/quizify) repository. To track the early stages of development, we recommend looking at the old repository.
 
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+The project interface design can be found at the [link](https://www.figma.com/file/F8xgI694OiBHHNAw9ABkTr/IP_Project?node-id=0%3A1)
